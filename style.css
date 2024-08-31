@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/fundo.png);
+}
+
+section {}
+
+nav {
+    padding: 25px;
+    background-color: #FF5722;
+    box-shadow: 10px 10px 50px #000;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    grid-template-areas: "nav nav nav";
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.menu:link, .menu:visited {
+    color: #FFF;
+}
+.menu:hover, .menu:active {
+    color: black;
+}
+
+.footer-nome:link, .footer-nome:visited {
+    color: #FFF;
+}
+.footer-nome:hover, .footer-nome:active {
+    color: #FEDC5B;
+}
+
+main {
+    margin: 20px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+}
+
+h2 {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 80vh;
+}
+
+#contatos {
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.contato1 {
+    width: 150px;
+    height: 150px;
+}
+
+#zap, #insta {
+    height: 175px;
+}
+
+#sobre {
+    box-shadow: 10px 10px 50px #000;
+    background-color: #FF5722;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sobre_nos {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+#local {
+    box-shadow: 10px 10px 50px #000;
+    background-color: #FF5722;
+    padding: 20px;
+    margin: 20px;
+    color: #FFF;
+    border-radius: 20px;
+}
+
+footer {
+    clear: both;
+    padding: 20px;
+    background-color: #000;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#cardapio {
+    box-shadow: 10px 10px 50px #000;
+    border-radius: 20px;
+    background-color: #FF5722;
+    padding: 20px;
+}
+
+#container {
+    border-radius: 20px;
+    background-color: #FF5722;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardcontent:hover {
+    box-shadow: 0 8px 16px #000;
+}
+
+.cardcontent {
+    background-color: #FEDC5B;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px #D9D9D9;
+    transition: 0.5s;
+    margin-bottom: 15px;
+}
+
+.cardcontent p {
+    color: #000;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 20px;
+}
+
+.img-card {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+#container-login {
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#img-login {}
+
+#card-login {
+    box-shadow: 10px 10px 50px #000;
+    border-radius: 20px;
+    background-color: #FF5722;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type="password"], input[type="tel"] {
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+}
+
+input[type="submit"] {
+    background-color: #FEDC5B;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #000;
+    border-radius: 15px;
+    box-shadow: 0 0px 8px #000;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: #FFF;
+}
+
+input {
+    font-size: 1.5rem;
+}
+
+#recuperar-login {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+p #recuperar-login {
+    font-family: 'Roboto', sans-serif;
+}
+
+#painel {
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+#card-painel {
+    background-image: url(img/fundo_laranja.jpg);
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.card1-painel {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    background-color: #FF5722;
+    border-radius: 5px;
+    margin-bottom: 100px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    justify-content: center;
+}
+
+.card2-painel {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #FEDC5B;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card2-painel:hover {
+    box-shadow: 0 8px 16px #000;
+}
+
+.card-content-painel {
+    background-color: #D9D9D9;
+    padding-left: 15px;
+    padding-right: 600px;
+    padding-bottom: 100px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px #777;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 393px) {
+    #container-login {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 393px) {
+    #container-login {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 393px) {
+    nav {
+        padding: 15px;
+    }
+
+    .cardcontent {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #container-login {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #card-login {
+        padding: 20px;
+    }
+
+    input[type="password"], input[type="tel"], input[type="submit"] {
+        width: 100%;
+    }
+
+    .contato1 {
+        width: 100px;
+        height: 100px;
+    }
+
+    #zap, #insta {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 393px) {
+    a {
+        font-size: 0.8rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    .card-content-painel {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card1-painel {
+        margin-left: 0;
+    }
+
+    #painel {
+        flex-direction: column;
+    }
+}
