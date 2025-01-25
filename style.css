@@ -123,10 +123,10 @@ footer {
 
 .container {
     max-width: 1200px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 20px;
     background-color: #fbd1b7;
 }
@@ -145,15 +145,16 @@ h1 {
 }
 
 .category {
-    background-color: #fbd1b7;
+    background-color: #f3b086;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .category h2 {
-    margin: 0 0 10px;
+    margin: 0 0 5px;
     color: #8c3f2f;
+    text-align: left;
 }
 
 .items {
