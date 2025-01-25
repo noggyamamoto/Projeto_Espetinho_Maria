@@ -129,13 +129,14 @@ footer {
     margin-bottom: 50px;
     padding: 20px;
     background-color: #fbd1b7;
+    border-radius: 10px;
 }
 
 h1 {
     text-align: left;
-    color: #fff;
-    text-shadow: 5px 5px 25px #000;
+    color: #8c3f2f;
     margin-bottom: 20px;
+    font-family: Kaushan Script;
 }
 
 .menu {
