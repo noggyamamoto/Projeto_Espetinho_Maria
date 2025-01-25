@@ -5,56 +5,19 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url(img/fundo.png);
-}
-
-section {}
-
 nav {
     padding: 25px;
     background-color: #FF5722;
-    box-shadow: 10px 10px 50px #000;
+    box-shadow: 10px 10px 100px #000;
     text-align: center;
-    justify-content: center;
+    justify-content: right;
     display: grid;
     grid-template-areas: "nav nav nav";
 }
-
-a {
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-}
-
-.menu:link, .menu:visited {
-    color: #FFF;
-}
-.menu:hover, .menu:active {
-    color: black;
-}
-
-.footer-nome:link, .footer-nome:visited {
-    color: #FFF;
-}
-.footer-nome:hover, .footer-nome:active {
-    color: #FEDC5B;
-}
-
-main {
-    margin: 20px;
-}
-
-p {
-    font-family: 'Roboto', sans-serif;
-    color: #FFF;
-}
-
-h2 {
-    padding: 20px;
-    margin-bottom: 20px;
-    color: #FFF;
-    font-family: 'Roboto', sans-serif;
+.banner{
+    background-image: url(img/fundo.png);
+    padding: 120px;
+    opacity: 0.3;
 }
 
 #logo {
@@ -73,19 +36,49 @@ h2 {
     border-radius: 20px;
 }
 
+#zap, #insta {
+    height: 175px;
+}
+
 .contato1 {
     width: 150px;
     height: 150px;
 }
 
-#zap, #insta {
-    height: 175px;
+.linha{
+    background-color: #FF5722;
+    opacity: 0.4;
+    padding: 3px;
+    margin-bottom: 1px;
+}
+
+h2 {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #FFF;
+    font-family: Kaushan Script;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
 }
 
 #sobre {
-    box-shadow: 10px 10px 50px #000;
+    box-shadow: 5px 5px 25px #000;
     background-color: #FF5722;
     padding: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     border-radius: 20px;
     font-family: 'Roboto', sans-serif;
 }
@@ -96,13 +89,18 @@ h2 {
     padding-bottom: 10px;
 }
 
-#local {
-    box-shadow: 10px 10px 50px #000;
-    background-color: #FF5722;
-    padding: 20px;
-    margin: 20px;
+.menu:link, .menu:visited {
     color: #FFF;
-    border-radius: 20px;
+}
+.menu:hover, .menu:active {
+    color: black;
+}
+
+.footer-nome:link, .footer-nome:visited {
+    color: #FFF;
+}
+.footer-nome:hover, .footer-nome:active {
+    color: #FEDC5B;
 }
 
 footer {
@@ -113,236 +111,120 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
-#cardapio {
-    box-shadow: 10px 10px 50px #000;
-    border-radius: 20px;
-    background-color: #FF5722;
-    padding: 20px;
+.body_cardapio{
+    background-image: url(img/fundo.png); 
+    
 }
 
-#container {
-    border-radius: 20px;
-    background-color: #FF5722;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+.cardapio_container{
+    background-color: #FFB097;
+    padding: 70px;
 }
 
-.cardcontent:hover {
-    box-shadow: 0 8px 16px #000;
-}
-
-.cardcontent {
-    background-color: #FEDC5B;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0px 8px #D9D9D9;
-    transition: 0.5s;
-    margin-bottom: 15px;
-}
-
-.cardcontent p {
-    color: #000;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    line-height: 20px;
-}
-
-.img-card {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-}
-
-#container-login {
-    margin-left: 150px;
-    margin-right: 150px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#img-login {}
-
-#card-login {
-    box-shadow: 10px 10px 50px #000;
-    border-radius: 20px;
-    background-color: #FF5722;
-    padding: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-
-input[type="password"], input[type="tel"] {
-    border-radius: 10px;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 30px;
-}
-
-input[type="submit"] {
-    background-color: #FEDC5B;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 10px;
-    color: #000;
-    border-radius: 15px;
-    box-shadow: 0 0px 8px #000;
-}
-
-label {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    color: #FFF;
-}
-
-input {
-    font-size: 1.5rem;
-}
-
-#recuperar-login {
-    margin-top: 10px;
-    padding: 20px;
-}
-
-p #recuperar-login {
-    font-family: 'Roboto', sans-serif;
-}
-
-#painel {
-    background-color: #FFF;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
-}
-
-#card-painel {
-    background-image: url(img/fundo_laranja.jpg);
-    justify-content: space-between;
-    border-radius: 5px;
-}
-
-.card1-painel {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 30px;
-    background-color: #FF5722;
-    border-radius: 5px;
-    margin-bottom: 100px;
-    font-family: 'Roboto', sans-serif;
-    color: #FFF;
-    justify-content: center;
-}
-
-.card2-painel {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-    background-color: #FEDC5B;
-    border-radius: 10px;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-}
-
-.card2-painel:hover {
-    box-shadow: 0 8px 16px #000;
-}
-
-.card-content-painel {
-    background-color: #D9D9D9;
-    padding-left: 15px;
-    padding-right: 600px;
-    padding-bottom: 100px;
+.container {
+    max-width: 1200px;
     margin-left: 50px;
+    margin-right: 50px;
     margin-top: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 8px 16px #777;
+    padding: 20px;
+    background-color: #fbd1b7;
 }
 
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 393px) {
-    #container-login {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
+h1 {
+    text-align: left;
+    color: #fff;
+    text-shadow: 5px 5px 25px #000;
+    margin-bottom: 20px;
 }
 
-@media screen and (max-width: 393px) {
-    #container-login {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    #container {
-        flex-direction: column;
-        align-items: center;
-    }
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-@media screen and (max-width: 393px) {
-    nav {
-        padding: 15px;
-    }
-
-    .cardcontent {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    #container-login {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #card-login {
-        padding: 20px;
-    }
-
-    input[type="password"], input[type="tel"], input[type="submit"] {
-        width: 100%;
-    }
-
-    .contato1 {
-        width: 100px;
-        height: 100px;
-    }
-
-    #zap, #insta {
-        height: auto;
-    }
+.category {
+    background-color: #fbd1b7;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 393px) {
-    a {
-        font-size: 0.8rem;
-    }
+.category h2 {
+    margin: 0 0 10px;
+    color: #8c3f2f;
+}
 
-    label {
-        font-size: 1.2rem;
-    }
+.items {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
 
-    .card-content-painel {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 20px;
-        margin-left: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+.item {
+    flex: 0 0 auto;
+    width: 150px;
+    text-align: center;
+}
 
-    .card1-painel {
-        margin-left: 0;
-    }
+.item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    #painel {
-        flex-direction: column;
-    }
+.item button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffd369;
+    color: #8c3f2f;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.navigation button {
+    background-color: #fcbf77;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart {
+    background-color: #fcbf77;
 }
