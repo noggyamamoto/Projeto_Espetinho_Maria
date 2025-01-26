@@ -306,6 +306,12 @@ h1, h2 {
     background-color: #e5533c;
 }
 
+.button_enviar{
+    border-radius: 50%;
+    padding: 1rem;
+    margin-right: 0.8rem;
+}
+
 .floating-buttons {
     position: fixed;
     bottom: 20px;
