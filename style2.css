@@ -41,7 +41,7 @@ nav {
 }
 
 .banner {
-    background-image: url(img/fundo.png);
+    background-image: url(img/banner.jpg);
     background-size: cover;
     background-position: center;
     padding: 100px 20px;
@@ -81,6 +81,14 @@ nav {
 .contato1 {
     width: 120px;
     height: 120px;
+    padding-top: 0.5rem;
+}
+
+#loc{
+    width: 120px;
+    height: 100px;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
 }
 
 /* Linha */
