@@ -145,14 +145,17 @@ h1 {
     gap: 20px;
 }
 
-.category {
+.categoria {
     background-color: #f3b086;
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.category h2 {
+.categoria h2 {
     margin: 0 0 5px;
     color: #8c3f2f;
     text-align: left;
@@ -162,7 +165,7 @@ h1 {
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 .item {
@@ -230,3 +233,104 @@ h1 {
 .cart {
     background-color: #fcbf77;
 }
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fef4e8;
+}
+
+nav {
+    background-color: #FF5722;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav .menu {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 10rem auto;
+    padding: 5rem;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.item {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    width: 200px;
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.item button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff6347;
+    border: #333;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.item button:hover {
+    background-color: #e5533c;
+}
+
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.floating-buttons a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #25d366;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+}
+    
