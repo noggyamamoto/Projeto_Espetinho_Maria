@@ -15,62 +15,90 @@
 			<div class="container">
 				<h1>Cardápio</h1>
 				<section class="categoria">
-					<h2>Espetos</h2>
-					<div class="items">
-						<article class="item">
-							<img src="https://via.placeholder.com/150" alt="Espeto de carne suculento">
-							<button>Espeto 1</button>
-						</article>
-						<article class="item">
-							<img src="https://via.placeholder.com/150" alt="Espeto de frango delicioso">
-							<button>Espeto 2</button>
-						</article>
+                    <h2>Espetos</h2>
+                    <div class="items">
                         <article class="item">
-                            <img src="https://via.placeholder.com/150" alt="Porção de batatas fritas crocantes">
-                            <button>Espeto 3</button>
-						</article>
-					</div>
-				</section>
-
-				<section class="categoria">
-					<h2>Porções</h2>
-					<div class="items">
-						<article class="item">
-							<img src="https://via.placeholder.com/150" alt="Porção de batatas fritas crocantes">
-							<button>Porção 1</button>
-						</article>
-						<article class="item">
-							<img src="https://via.placeholder.com/150" alt="Porção de mandioca deliciosa">
-							<button>Porção 2</button>
+                            <img src="https://via.placeholder.com/150" alt="Espeto de carne suculento">
+                            <label>
+                                <input type="checkbox" id="espeto1" value="Espeto 1">
+                                Espeto 1
+                            </label>
+                        </article>
+                        <article class="item">
+                            <img src="https://via.placeholder.com/150" alt="Espeto de frango delicioso">
+                            <label>
+                                <input type="checkbox" id="espeto2" value="Espeto 2">
+                                Espeto 2
+                            </label>
                         </article>
                         <article class="item">
                             <img src="https://via.placeholder.com/150" alt="Porção de batatas fritas crocantes">
-                            <button>Porção 3</button>
-					</div>
-				</section>
+                            <label>
+                                <input type="checkbox" id="espeto3" value="Espeto 3">
+                                Espeto 3
+                            </label>
+                        </article>
+                    </div>
+                </section>
 
 				<section class="categoria">
-					<h2>Bebidas</h2>
-					<div class="items">
-						<article class="item">
-							<img src="https://via.placeholder.com/150" alt="Cerveja gelada">
-							<button>Bebida 1</button>
-						</article>
-						<article class="item">
-							<img src="https://via.placeholder.com/150" alt="Refrigerante refrescante">
-							<button>Bebida 2</button>
-						</article>
+                    <h2>Porções</h2>
+                    <div class="items">
+                        <article class="item">
+                            <img src="https://via.placeholder.com/150" alt="Espeto de carne suculento">
+                            <label>
+                                <input type="checkbox" id="porçao1" value="Porção 1">
+                                Porção 1
+                            </label>
+                        </article>
+                        <article class="item">
+                            <img src="https://via.placeholder.com/150" alt="Espeto de frango delicioso">
+                            <label>
+                                <input type="checkbox" id="porçao2" value="Porção 2">
+                                Porção 2
+                            </label>
+                        </article>
                         <article class="item">
                             <img src="https://via.placeholder.com/150" alt="Porção de batatas fritas crocantes">
-                            <button>Bebida 3</button>
-						</article>
-					</div>
-				</section>
+                            <label>
+                                <input type="checkbox" id="porçao3" value="Porção 3">
+                                Porção 3
+                            </label>
+                        </article>
+                    </div>
+                </section>
+
+				<section class="categoria">
+                    <h2>Bebidas</h2>
+                    <div class="items">
+                        <article class="item">
+                            <img src="https://via.placeholder.com/150" alt="Espeto de carne suculento">
+                            <label>
+                                <input type="checkbox" id="bebida1" value="Bebida 1">
+                                Bebida 1
+                            </label>
+                        </article>
+                        <article class="item">
+                            <img src="https://via.placeholder.com/150" alt="Espeto de frango delicioso">
+                            <label>
+                                <input type="checkbox" id="bebida2" value="Bebida 2">
+                                Bebida 2
+                            </label>
+                        </article>
+                        <article class="item">
+                            <img src="https://via.placeholder.com/150" alt="Porção de batatas fritas crocantes">
+                            <label>
+                                <input type="checkbox" id="bebida3" value="Bebida 3">
+                                Bebida 3
+                            </label>
+                        </article>
+                    </div>
+                </section>
 			</div>
 
 			<!-- Botões Flutuantes -->
 			<div class="floating-buttons">
-				<a href="https://wa.me/00000000000" aria-label="Contato pelo WhatsApp">📱</a>
+				<a onclick="gerarListaDeItens()">📱</a>
 			</div>
 		</main>
 		<footer>
