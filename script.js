@@ -2,23 +2,24 @@
 function gerarListaDeItens() {
     const itensSelecionados = Array.from(
         document.querySelectorAll('input[type="checkbox"]:checked')
-    ).map(checkbox => checkbox.value);
+    ).map(checkbox => ({
+        nome: checkbox.value,
+        preco: parseFloat(checkbox.dataset.preco || 0) // Obtém o preço do atributo data-preco
+    }));
 
     if (itensSelecionados.length > 0) {
-        const lista = itensSelecionados.join(', ');
+        const lista = itensSelecionados.map(item => item.nome).join(', ');
+        const total = itensSelecionados.reduce((acc, item) => acc + item.preco, 0).toFixed(2);
         const codigoUnico = gerarCodigoUnico();
 
-        // Cria a mensagem para exibição no confirm
-        const mensagemConfirmacao = `Número do Pedido: ${codigoUnico}\n\nItens selecionados:\n${itensSelecionados.join('\n')}\n\nDeseja enviar este pedido ao WhatsApp?`;
+        // Exibe um confirm para confirmação do pedido
+        const mensagemConfirmacao = `Número do Pedido: ${codigoUnico}\n\nItens selecionados:\n${itensSelecionados.map(item => `${item.nome} - R$${item.preco.toFixed(2)}`).join('\n')}\n\nTotal do Pedido: R$${total}\n\nDeseja enviar este pedido ao WhatsApp?`;
 
-        // Exibe o confirm para o usuário
         const confirmarEnvio = confirm(mensagemConfirmacao);
 
         if (confirmarEnvio) {
-            // Envia a mensagem para o WhatsApp
-            enviarParaWhatsApp(lista, codigoUnico);
+            enviarParaWhatsApp(lista, codigoUnico, total);
         } else {
-            // O usuário clicou em "Cancelar"
             alert("Você pode revisar os itens antes de enviar!");
         }
     } else {
@@ -32,9 +33,9 @@ function gerarCodigoUnico() {
 }
 
 // Função para enviar a mensagem para o WhatsApp
-function enviarParaWhatsApp(lista, codigo) {
+function enviarParaWhatsApp(lista, codigo, total) {
     const numeroWhatsApp = "5561985613502"; // Substitua com o número do WhatsApp
-    const mensagem = `Itens selecionados: ${lista}\nCódigo: ${codigo}`;
+    const mensagem = `Aqui é o atendente virtual do Espetinho da Maria.\n\nVim te avisar que seu pedido foi realizado com sucesso e já está em preparo.\n\n*Nº do pedido:* ${codigo}\n\n*Itens:* ${lista}\n\n*Total do pedido:* R$${total}`;
     const mensagemFormatada = encodeURIComponent(mensagem);
 
     // Cria o link do WhatsApp

@@ -1,119 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>CHURRASCO E CERVEJA</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body class="body_cardapio">
-		<nav>
-			<a class="menu" href="index.html" target="_blank">HOME</a>		
-		</nav>
-		<main>
-           
-			<div class="container">
-				<h1>Cardápio</h1>
-				<section class="categoria">
-                    <h2>Espetos</h2>
-                    <div class="items">
-                        <article class="item">
-                            <img src="img/espetinho 1.jpg" alt="Espeto de carne suculento">
-                            <label>
-                                <input type="checkbox" id="espeto1" value="Espeto de carne">
-                                Espeto de carne <br> R$ 10,00
-                            </label>
-                        </article>
-                        <article class="item">
-                            <img src="img/espetinho 2.JPG" alt="Espeto de frango delicioso">
-                            <label>
-                                <input type="checkbox" id="espeto2" value="Espeto de frango">
-                                Espeto de frango <br> R$ 10,00
-                            </label>
-                        </article>
-                        <article class="item">
-                            <img src="img/espetinho 3.jpg" alt="Espeto de linguiça delicioso">
-                            <label>
-                                <input type="checkbox" id="espeto3" value="Espeto de linguiça">
-                                Espeto de linguiça <br> R$ 10,00
-                            </label>
-                        </article>
-                    </div>
-                </section>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHURRASCO E CERVEJA</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body_cardapio">
+    <nav>
+        <a class="menu" href="index.html" target="_blank">HOME</a>        
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Cardápio</h1>
+            <section class="categoria">
+                <h2>Espetos</h2>
+                <div class="items">
+                    <article class="item">
+                        <img src="img/espetinho 1.jpg" alt="Espeto de carne suculento">
+                        <label>
+                            <input type="checkbox" id="espeto1" value="Espeto de carne" data-preco="10.00">
+                            Espeto de carne <br> R$ 10,00
+                        </label>
+                    </article>
+                    <article class="item">
+                        <img src="img/espetinho 2.JPG" alt="Espeto de frango delicioso">
+                        <label>
+                            <input type="checkbox" id="espeto2" value="Espeto de frango" data-preco="10.00">
+                            Espeto de frango <br> R$ 10,00
+                        </label>
+                    </article>
+                    <article class="item">
+                        <img src="img/espetinho 3.jpg" alt="Espeto de linguiça delicioso">
+                        <label>
+                            <input type="checkbox" id="espeto3" value="Espeto de linguiça" data-preco="10.00">
+                            Espeto de linguiça <br> R$ 10,00
+                        </label>
+                    </article>
+                </div>
+            </section>
 
-				<section class="categoria">
-                    <h2>Porções</h2>
-                    <div class="items">
-                        <article class="item">
-                            <img src="img/acom 1.jpg" alt="Mandioca frita/cozida">
-                            <label>
-                                <input type="checkbox" id="porçao1" value="Mandioca frita/cozida">
-                                Mandioca frita/cozida <br> R$ 6,79
-                            </label>
-                        </article>
-                        <article class="item">
-                            <img src="img/acom 2.jpg" alt="Torresmo frito">
-                            <label>
-                                <input type="checkbox" id="porçao2" value="Torresmo frito">
-                                Torresmo frito <br> R$ 8,24
-                            </label>
-                        </article>
-                        <article class="item">
-                            <img src="img/acom 3.jpg" alt="Jantinha completa">
-                            <label>
-                                <input type="checkbox" id="porçao3" value="Jantinha completa">
-                                Jantinha completa <br> R$ 20,00
-                            </label>
-                        </article>
-                    </div>
-                </section>
+            <section class="categoria">
+                <h2>Porções</h2>
+                <div class="items">
+                    <article class="item">
+                        <img src="img/acom 1.jpg" alt="Mandioca frita/cozida">
+                        <label>
+                            <input type="checkbox" id="porcao1" value="Mandioca frita/cozida" data-preco="6.79">
+                            Mandioca frita/cozida <br> R$ 6,79
+                        </label>
+                    </article>
+                    <article class="item">
+                        <img src="img/acom 2.jpg" alt="Torresmo frito">
+                        <label>
+                            <input type="checkbox" id="porcao2" value="Torresmo frito" data-preco="8.24">
+                            Torresmo frito <br> R$ 8,24
+                        </label>
+                    </article>
+                    <article class="item">
+                        <img src="img/acom 3.jpg" alt="Jantinha completa">
+                        <label>
+                            <input type="checkbox" id="porcao3" value="Jantinha completa" data-preco="20.00">
+                            Jantinha completa <br> R$ 20,00
+                        </label>
+                    </article>
+                </div>
+            </section>
 
-				<section class="categoria">
-                    <h2>Bebidas</h2>
-                    <div class="items">
-                        <article class="item">
-                            <img src="img/suco.jpg" alt="Sucos naturais">
-                            <label>
-                                <input type="checkbox" id="bebida1" value="Sucos naturais">
-                                Sucos naturais - 500ml <br> R$ 8,50
-                            </label>
-                        </article>
-                        <article class="item">
-                            <img src="img/cerveja.jpg" alt="Cervejas - LATA">
-                            <label>
-                                <input type="checkbox" id="bebida2" value="Cervejas - LATA">
-                                Cervejas - LATA <br> R$ 4,59
-                            </label>
-                        </article>
-                        <article class="item">
-                            <img src="img/refri.png" alt="Refrigerantes - LATA">
-                            <label>
-                                <input type="checkbox" id="bebida3" value="Refrigerantes - LATA">
-                                Refrigerantes - LATA <br> R$ 4,50
-                            </label>
-                        </article>
-                    </div>
-                </section>
-			</div>
+            <section class="categoria">
+                <h2>Bebidas</h2>
+                <div class="items">
+                    <article class="item">
+                        <img src="img/suco.jpg" alt="Sucos naturais">
+                        <label>
+                            <input type="checkbox" id="bebida1" value="Sucos naturais" data-preco="8.50">
+                            Sucos naturais - 500ml <br> R$ 8,50
+                        </label>
+                    </article>
+                    <article class="item">
+                        <img src="img/cerveja.jpg" alt="Cervejas - LATA">
+                        <label>
+                            <input type="checkbox" id="bebida2" value="Cervejas - LATA" data-preco="4.59">
+                            Cervejas - LATA <br> R$ 4,59
+                        </label>
+                    </article>
+                    <article class="item">
+                        <img src="img/refri.png" alt="Refrigerantes - LATA">
+                        <label>
+                            <input type="checkbox" id="bebida3" value="Refrigerantes - LATA" data-preco="4.50">
+                            Refrigerantes - LATA <br> R$ 4,50
+                        </label>
+                    </article>
+                </div>
+            </section>
+        </div>
 
-			<!-- Botões Flutuantes -->
-			<div class="floating-buttons">
-                <button class="button_enviar">
-                    <a onclick="gerarListaDeItens()">📱</a>
-                </button>
-				
-			</div>
-		</main>
-		<footer>
-			<p>
-				Desenvolvido por
-				<a class="footer-nome" href="https://www.linkedin.com/in/danielle-ester-564052325/" target="_blank">Danielle Ester</a>,
-				<a class="footer-nome" href="https://www.linkedin.com/in/jo%C3%A3o-nogueira-5898902b2/" target="_blank">João Nogueira</a> e
-				<a class="footer-nome" href="https://www.linkedin.com/in/mayara-vieira-00259926b/" target="_blank">Mayara Vieira</a>.
-				<br>
-				Copyright © 2025 todos os direitos reservados.
-			</p>
-		</footer>
-	</body>
-	<script src="script.js"></script>
+        <!-- Botões Flutuantes -->
+        <div class="floating-buttons">
+            <button class="button_enviar">
+                <a onclick="gerarListaDeItens()">📱</a>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>
+            Desenvolvido por
+            <a class="footer-nome" href="https://www.linkedin.com/in/danielle-ester-564052325/" target="_blank">Danielle Ester</a>,
+            <a class="footer-nome" href="https://www.linkedin.com/in/jo%C3%A3o-nogueira-5898902b2/" target="_blank">João Nogueira</a> e
+            <a class="footer-nome" href="https://www.linkedin.com/in/mayara-vieira-00259926b/" target="_blank">Mayara Vieira</a>.
+            <br>
+            Copyright © 2025 todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+<script src="script.js"></script>
 </html>
