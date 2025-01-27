@@ -1,72 +1,45 @@
-// Classe responsável por gerenciar a seleção de itens
-class ItemSelector {
-    constructor() {
-        this.selecao_itens = [];
-    }
+// Função para gerar a lista de itens selecionados
+function gerarListaDeItens() {
+    const itensSelecionados = Array.from(
+        document.querySelectorAll('input[type="checkbox"]:checked')
+    ).map(checkbox => checkbox.value);
 
-    // Coleta os itens selecionados
-    coleta_itens() {
-        this.selecao_itens = [];
-        document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-            this.selecao_itens.push(checkbox.value);
-        });
-        return this.selecao_itens;
-    }
+    if (itensSelecionados.length > 0) {
+        const lista = itensSelecionados.join(', ');
+        const codigoUnico = gerarCodigoUnico();
 
-    // Verifica se há itens selecionados
-    verifica_itens_selecionados() {
-        return this.selecao_itens.length > 0;
-    }
-}
+        // Cria a mensagem para exibição no confirm
+        const mensagemConfirmacao = `Número do Pedido: ${codigoUnico}\n\nItens selecionados:\n${itensSelecionados.join('\n')}\n\nDeseja enviar este pedido ao WhatsApp?`;
 
-// Classe responsável por gerar mensagens e códigos únicos
-class Gerador_Mensagens_Codigos {
-    // Gera um código único
-    static gera_id_unico() {
-        return 'PEDIDO: ' + Math.random().toString(36).substr(2, 9);
-    }
+        // Exibe o confirm para o usuário
+        const confirmarEnvio = confirm(mensagemConfirmacao);
 
-    // Formata a mensagem para envio
-    static formata_mensagem(items, code) {
-        return `Itens selecionados: ${items.join(', ')}\nCódigo: ${code}`;
-    }
-}
-
-// Classe responsável por enviar mensagens para o WhatsApp
-class Enviar_WhatsApp {
-    constructor(phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    // Envia a mensagem via WhatsApp
-    sendMessage(message) {
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappLink = `https://wa.me/${this.phoneNumber}?text=${encodedMessage}`;
-        window.open(whatsappLink, '_blank');
-    }
-}
-
-// Classe principal para gerenciar o fluxo da aplicação
-class App {
-    constructor() {
-        this.itemSelector = new ItemSelector();
-        this.whatsAppSender = new Enviar_WhatsApp('5561985613502'); // Substitua pelo número do WhatsApp
-    }
-
-    // Função principal para gerar a lista e enviar via WhatsApp
-    run() {
-        const selectedItems = this.itemSelector.coleta_itens();
-
-        if (this.itemSelector.verifica_itens_selecionados()) {
-            const uniqueCode = Gerador_Mensagens_Codigos.gera_id_unico();
-            const message = Gerador_Mensagens_Codigos.formata_mensagem(selectedItems, uniqueCode);
-            this.whatsAppSender.sendMessage(message);
+        if (confirmarEnvio) {
+            // Envia a mensagem para o WhatsApp
+            enviarParaWhatsApp(lista, codigoUnico);
         } else {
-            alert("Por favor, selecione ao menos um item!");
+            // O usuário clicou em "Cancelar"
+            alert("Você pode revisar os itens antes de enviar!");
         }
+    } else {
+        alert("Por favor, selecione ao menos um item!");
     }
 }
 
-// Instancia o aplicativo e executa
-const app = new App();
-document.querySelector('#botaoEnviar').addEventListener('click', () => app.run());
+// Função para gerar um código único (número de 1 a 999)
+function gerarCodigoUnico() {
+    return Math.floor(Math.random() * 999) + 1; // Número entre 1 e 999
+}
+
+// Função para enviar a mensagem para o WhatsApp
+function enviarParaWhatsApp(lista, codigo) {
+    const numeroWhatsApp = "5561985613502"; // Substitua com o número do WhatsApp
+    const mensagem = `Itens selecionados: ${lista}\nCódigo: ${codigo}`;
+    const mensagemFormatada = encodeURIComponent(mensagem);
+
+    // Cria o link do WhatsApp
+    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemFormatada}`;
+    
+    // Abre o WhatsApp com a mensagem pronta para envio
+    window.open(linkWhatsApp, '_blank');
+}
