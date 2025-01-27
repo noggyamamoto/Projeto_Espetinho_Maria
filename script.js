@@ -1,38 +1,72 @@
-// Função para gerar a lista de itens selecionados
-function gerarListaDeItens() {
-    let itensSelecionados = [];
+// Classe responsável por gerenciar a seleção de itens
+class ItemSelector {
+    constructor() {
+        this.selectedItems = [];
+    }
 
-    // Coleta os itens selecionados nas seções de "Porções" e "Bebidas"
-    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-        itensSelecionados.push(checkbox.value);
-    });
+    // Coleta os itens selecionados
+    collectSelectedItems() {
+        this.selectedItems = [];
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+            this.selectedItems.push(checkbox.value);
+        });
+        return this.selectedItems;
+    }
 
-    // Se houver itens selecionados
-    if (itensSelecionados.length > 0) {
-        let lista = itensSelecionados.join(', ');
-        let codigoUnico = gerarCodigoUnico();
-        enviarParaWhatsApp(lista, codigoUnico);
-    } else {
-        alert("Por favor, selecione ao menos um item!");
+    // Verifica se há itens selecionados
+    hasSelectedItems() {
+        return this.selectedItems.length > 0;
     }
 }
 
-// Função para gerar um código único
-function gerarCodigoUnico() {
-    return 'ID' + Math.random().toString(36).substr(2, 9);  // Código único de 9 caracteres aleatórios
+// Classe responsável por gerar mensagens e códigos únicos
+class MessageGenerator {
+    // Gera um código único
+    static generateUniqueCode() {
+        return 'ID' + Math.random().toString(36).substr(2, 9);
+    }
+
+    // Formata a mensagem para envio
+    static formatMessage(items, code) {
+        return `Itens selecionados: ${items.join(', ')}\nCódigo: ${code}`;
+    }
 }
 
-// Função para enviar a mensagem para o WhatsApp
-function enviarParaWhatsApp(lista, codigo) {
-    let numeroWhatsApp = "5561985613502";  // Substitua com o número do WhatsApp
-    let mensagem = `Itens selecionados: ${lista}\nCódigo: ${codigo}`;
+// Classe responsável por enviar mensagens para o WhatsApp
+class WhatsAppSender {
+    constructor(phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-    // Codifica a mensagem para URL
-    let mensagemFormatada = encodeURIComponent(mensagem);
-
-    // Cria o link do WhatsApp
-    let linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemFormatada}`;
-
-    // Abre o WhatsApp com a mensagem pronta para envio
-    window.open(linkWhatsApp, '_blank');
+    // Envia a mensagem via WhatsApp
+    sendMessage(message) {
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappLink = `https://wa.me/${this.phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappLink, '_blank');
+    }
 }
+
+// Classe principal para gerenciar o fluxo da aplicação
+class App {
+    constructor() {
+        this.itemSelector = new ItemSelector();
+        this.whatsAppSender = new WhatsAppSender('5561985613502'); // Substitua pelo número do WhatsApp
+    }
+
+    // Função principal para gerar a lista e enviar via WhatsApp
+    run() {
+        const selectedItems = this.itemSelector.collectSelectedItems();
+
+        if (this.itemSelector.hasSelectedItems()) {
+            const uniqueCode = MessageGenerator.generateUniqueCode();
+            const message = MessageGenerator.formatMessage(selectedItems, uniqueCode);
+            this.whatsAppSender.sendMessage(message);
+        } else {
+            alert("Por favor, selecione ao menos um item!");
+        }
+    }
+}
+
+// Instancia o aplicativo e executa
+const app = new App();
+document.querySelector('#botaoEnviar').addEventListener('click', () => app.run());
