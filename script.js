@@ -23,7 +23,7 @@ class ItemSelector {
 class Gerador_Mensagens_Codigos {
     // Gera um código único
     static gera_id_unico() {
-        return 'ID' + Math.random().toString(36).substr(2, 9);
+        return 'PEDIDO: ' + Math.random().toString(36).substr(2, 9);
     }
 
     // Formata a mensagem para envio
