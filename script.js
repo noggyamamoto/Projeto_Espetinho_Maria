@@ -1,39 +1,39 @@
 // Classe responsável por gerenciar a seleção de itens
 class ItemSelector {
     constructor() {
-        this.selectedItems = [];
+        this.selecao_itens = [];
     }
 
     // Coleta os itens selecionados
-    collectSelectedItems() {
-        this.selectedItems = [];
+    coleta_itens() {
+        this.selecao_itens = [];
         document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-            this.selectedItems.push(checkbox.value);
+            this.selecao_itens.push(checkbox.value);
         });
-        return this.selectedItems;
+        return this.selecao_itens;
     }
 
     // Verifica se há itens selecionados
-    hasSelectedItems() {
-        return this.selectedItems.length > 0;
+    verifica_itens_selecionados() {
+        return this.selecao_itens.length > 0;
     }
 }
 
 // Classe responsável por gerar mensagens e códigos únicos
-class MessageGenerator {
+class Gerador_Mensagens_Codigos {
     // Gera um código único
-    static generateUniqueCode() {
+    static gera_id_unico() {
         return 'ID' + Math.random().toString(36).substr(2, 9);
     }
 
     // Formata a mensagem para envio
-    static formatMessage(items, code) {
+    static formata_mensagem(items, code) {
         return `Itens selecionados: ${items.join(', ')}\nCódigo: ${code}`;
     }
 }
 
 // Classe responsável por enviar mensagens para o WhatsApp
-class WhatsAppSender {
+class Enviar_WhatsApp {
     constructor(phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -50,16 +50,16 @@ class WhatsAppSender {
 class App {
     constructor() {
         this.itemSelector = new ItemSelector();
-        this.whatsAppSender = new WhatsAppSender('5561985613502'); // Substitua pelo número do WhatsApp
+        this.whatsAppSender = new Enviar_WhatsApp('5561985613502'); // Substitua pelo número do WhatsApp
     }
 
     // Função principal para gerar a lista e enviar via WhatsApp
     run() {
-        const selectedItems = this.itemSelector.collectSelectedItems();
+        const selectedItems = this.itemSelector.coleta_itens();
 
-        if (this.itemSelector.hasSelectedItems()) {
-            const uniqueCode = MessageGenerator.generateUniqueCode();
-            const message = MessageGenerator.formatMessage(selectedItems, uniqueCode);
+        if (this.itemSelector.verifica_itens_selecionados()) {
+            const uniqueCode = Gerador_Mensagens_Codigos.gera_id_unico();
+            const message = Gerador_Mensagens_Codigos.formata_mensagem(selectedItems, uniqueCode);
             this.whatsAppSender.sendMessage(message);
         } else {
             alert("Por favor, selecione ao menos um item!");
