@@ -307,9 +307,14 @@ h1, h2 {
 }
 
 .button_enviar{
-    border-radius: 50%;
-    padding: 1rem;
-    margin-right: 0.8rem;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .floating-buttons {
