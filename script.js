@@ -1,46 +1,76 @@
-// Função para gerar a lista de itens selecionados
+// Classe Item
+class Item {
+    constructor(nome, preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    toString() {
+        return `${this.nome} - R$${this.preco.toFixed(2)}`;
+    }
+}
+
+// Classe Pedido
+class Pedido {
+    constructor() {
+        this.itens = [];
+        this.codigoUnico = this.gerarCodigoUnico();
+    }
+
+    adicionarItem(item) {
+        this.itens.push(item);
+    }
+
+    gerarCodigoUnico() {
+        return Math.floor(Math.random() * 999) + 1;
+    }
+
+    calcularTotal() {
+        return this.itens.reduce((acc, item) => acc + item.preco, 0).toFixed(2);
+    }
+
+    getListaItens() {
+        return this.itens.map(item => item.toString()).join('\n');
+    }
+
+    getMensagemConfirmacao() {
+        return `Número do Pedido: ${this.codigoUnico}\n\nItens selecionados:\n${this.getListaItens()}\n\nTotal do Pedido: R$${this.calcularTotal()}\n\nDeseja enviar este pedido ao WhatsApp?`;
+    }
+}
+
+// Classe WhatsAppService
+class WhatsAppService {
+    constructor(numeroWhatsApp) {
+        this.numeroWhatsApp = numeroWhatsApp;
+    }
+
+    enviarMensagem(pedido) {
+        const mensagem = `Obrigado por comprar no Espetinho da Maria!\n\n*Nº do pedido:* ${pedido.codigoUnico}\n\n*Itens:* ${pedido.getListaItens()}\n\n*Total do pedido:* R$${pedido.calcularTotal()}`;
+        const mensagemFormatada = encodeURIComponent(mensagem);
+        const linkWhatsApp = `https://api.whatsapp.com/send?phone=${this.numeroWhatsApp}&text=${mensagemFormatada}`;
+        window.open(linkWhatsApp, '_blank');
+    }
+}
+
+// Função principal
 function gerarListaDeItens() {
     const itensSelecionados = Array.from(
         document.querySelectorAll('input[type="checkbox"]:checked')
-    ).map(checkbox => ({
-        nome: checkbox.value,
-        preco: parseFloat(checkbox.dataset.preco || 0) // Obtém o preço do atributo data-preco
-    }));
+    ).map(checkbox => new Item(checkbox.value, parseFloat(checkbox.dataset.preco || 0)));
 
     if (itensSelecionados.length > 0) {
-        const lista = itensSelecionados.map(item => item.nome).join(', ');
-        const total = itensSelecionados.reduce((acc, item) => acc + item.preco, 0).toFixed(2);
-        const codigoUnico = gerarCodigoUnico();
+        const pedido = new Pedido();
+        itensSelecionados.forEach(item => pedido.adicionarItem(item));
 
-        // Exibe um confirm para confirmação do pedido
-        const mensagemConfirmacao = `Número do Pedido: ${codigoUnico}\n\nItens selecionados:\n${itensSelecionados.map(item => `${item.nome} - R$${item.preco.toFixed(2)}`).join('\n')}\n\nTotal do Pedido: R$${total}\n\nDeseja enviar este pedido ao WhatsApp?`;
-
-        const confirmarEnvio = confirm(mensagemConfirmacao);
+        const confirmarEnvio = confirm(pedido.getMensagemConfirmacao());
 
         if (confirmarEnvio) {
-            enviarParaWhatsApp(lista, codigoUnico, total);
+            const whatsAppService = new WhatsAppService("5561985613502");
+            whatsAppService.enviarMensagem(pedido);
         } else {
             alert("Você pode revisar os itens antes de enviar!");
         }
     } else {
         alert("Por favor, selecione ao menos um item!");
     }
-}
-
-// Função para gerar um código único (número de 1 a 999)
-function gerarCodigoUnico() {
-    return Math.floor(Math.random() * 999) + 1; // Número entre 1 e 999
-}
-
-// Função para enviar a mensagem para o WhatsApp
-function enviarParaWhatsApp(lista, codigo, total) {
-    const numeroWhatsApp = "5561985613502"; // Substitua com o número do WhatsApp
-    const mensagem = `Obrigado por comprar no Espetinho da Maria!\n\n*Nº do pedido:* ${codigo}\n\n*Itens:* ${lista}\n\n*Total do pedido:* R$${total}`;
-    const mensagemFormatada = encodeURIComponent(mensagem);
-
-    // Cria o link do WhatsApp
-    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemFormatada}`;
-    
-    // Abre o WhatsApp com a mensagem pronta para envio
-    window.open(linkWhatsApp, '_blank');
 }
