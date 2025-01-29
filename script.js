@@ -35,7 +35,7 @@ function gerarCodigoUnico() {
 // Função para enviar a mensagem para o WhatsApp
 function enviarParaWhatsApp(lista, codigo, total) {
     const numeroWhatsApp = "5561985613502"; // Substitua com o número do WhatsApp
-    const mensagem = `Aqui é o atendente virtual do Espetinho da Maria.\n\nVim te avisar que seu pedido foi realizado com sucesso e já está em preparo.\n\n*Nº do pedido:* ${codigo}\n\n*Itens:* ${lista}\n\n*Total do pedido:* R$${total}`;
+    const mensagem = `Obrigado por comprar no Espetinho da Maria!\n\n*Nº do pedido:* ${codigo}\n\n*Itens:* ${lista}\n\n*Total do pedido:* R$${total}`;
     const mensagemFormatada = encodeURIComponent(mensagem);
 
     // Cria o link do WhatsApp
