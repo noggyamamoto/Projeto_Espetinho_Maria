@@ -290,30 +290,14 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    /* Ajustes para a logo */
-    .logo {
-        top: 10px; /* Ajusta a posição vertical */
-        left: 20px; /* Posiciona à esquerda */
-        transform: none; /* Remove o transform que centralizava a logo */
-        z-index: 10; /* Mantém a logo por cima da banner */
-    }
-
-    .logo img {
-        max-width: 80px; /* Reduz o tamanho da logo */
-        height: auto;
-    }
-
-    /* Ajustes para o banner */
-    .banner {
-        padding: 70px 10px; /* Ajusta o padding para acomodar a logo */
-        z-index: 1; /* Garante que o banner fique atrás da logo */
-    }
-
-    /* Outros ajustes para mobile */
     nav {
         text-align: right;
         align-items: right;
         flex-direction: column;
+    }
+
+    .banner {
+        padding: 50px 10px;
     }
 
     h1 {
