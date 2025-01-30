@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +15,8 @@ nav {
     display: grid;
     grid-template-areas: "nav nav nav";
 }
-.banner{
+
+.banner {
     background-image: url(img/fundo.png);
     padding: 120px;
     opacity: 0.3;
@@ -45,7 +47,7 @@ nav {
     height: 150px;
 }
 
-.linha{
+.linha {
     background-color: #FF5722;
     opacity: 0.4;
     padding: 3px;
@@ -92,6 +94,7 @@ p {
 .menu:link, .menu:visited {
     color: #FFF;
 }
+
 .menu:hover, .menu:active {
     color: black;
 }
@@ -99,6 +102,7 @@ p {
 .footer-nome:link, .footer-nome:visited {
     color: #FFF;
 }
+
 .footer-nome:hover, .footer-nome:active {
     color: #FEDC5B;
 }
@@ -112,11 +116,11 @@ footer {
     border-top: 3px solid #FF5722; /* Linha separadora */
 }
 
-.body_cardapio{
-    background-image: url(img/fundo.png); 
+.body_cardapio {
+    background-image: url(img/fundo.png);
 }
 
-.cardapio_container{
+.cardapio_container {
     background-color: #FFB097;
     padding: 70px;
 }
@@ -231,7 +235,7 @@ h1 {
 }
 
 .floating-buttons a:hover {
-    background-color: #1a9e5d; /* Alterando para uma cor um pouco mais escura no hover */
+    background-color: #1a9e5d;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -306,7 +310,7 @@ h1, h2 {
     background-color: #e5533c;
 }
 
-.button_enviar{
+.button_enviar {
     background-color: #25d366;
     color: white;
     border: none;
@@ -360,17 +364,49 @@ footer a {
     .items {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
     .item {
+        width: 90%;
+        margin: 0 0 20px 0;
+        padding: 10px;
+    }
+
+    .item img {
         width: 100%;
-        margin-bottom: 10px;
+        height: auto;
+    }
+
+    .item button {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .categoria {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    .categoria h2 {
+        font-size: 18px;
+    }
+
+    .navigation button {
+        padding: 8px;
+        font-size: 14px;
     }
 
     .floating-buttons {
         bottom: 10px;
         right: 10px;
     }
-}
 
-    
+    .floating-buttons a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
