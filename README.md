@@ -26,8 +26,8 @@ O projeto visa desenvolver um **website institucional** para o "Espetinho da Mar
 - **Tempo estimado**: 155 horas.
 - **Tecnologias**: HTML5, CSS3, JavaScript, Figma (protótipos), GitHub Pages (hospedagem).
 
----
+### Protótipo
+- **Figma**: https://www.figma.com/design/mhT2CPq3fvLgqGiZnSONiF/Wireframe-CDM?node-id=93-2&t=WnQv9Gk1xMWnd63s-1
 
-
-### Acesso à documentação: 
+### Documentação: 
 - https://docs.google.com/document/d/1cYrgBeXaAyYi1l8cf5gmNw3AqhaWKpzddq4zlPPcre8/edit?usp=sharing
